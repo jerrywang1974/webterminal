@@ -1,5 +1,19 @@
 version: '3'
 services:
+  db:
+    image: mysql
+    restart: always
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES utf8mb4;' --innodb-flush-log-at-trx-commit=0
+    expose:
+       - "3306"
+    networks:
+      - public
+      - private
+    volumes:
+       - /opt/mariadb:/var/lib/mysql:rw
+    environment:
+       - MYSQL_DATABASE=webterminal
+       - MYSQL_ROOT_PASSWORD=vmware
   webterminal:
     image: webterminal/webterminal:latest
     container_name: webterminal
@@ -11,6 +25,8 @@ services:
     volumes:
       - /var/log:/var/log
     #command: ["sh","/docker-entrypoint.sh","start"]
+    depends_on:
+      - db
 networks:
   public:
     driver: bridge
