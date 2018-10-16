@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'webterminal.wsgi.application'
 #    }
 #}
 
-   DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webterminal',
