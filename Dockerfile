@@ -32,7 +32,6 @@ WORKDIR /opt/webterminal
 RUN mkdir media
 RUN pip install -r requirements.txt
 #RUN python manage.py makemigrations
-RUN python manage.py syncdb
 RUN python manage.py migrate
 RUN python createsuperuser.py
 ADD nginx.conf /etc/nginx/nginx.conf
