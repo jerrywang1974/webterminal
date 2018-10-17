@@ -39,4 +39,4 @@ ADD supervisord.conf /etc/supervisor/supervisord.conf
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 EXPOSE 80
-CMD ["/docker-entrypoint.sh", "start"]
+#CMD ["/docker-entrypoint.sh", "start"]

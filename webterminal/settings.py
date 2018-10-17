@@ -103,7 +103,7 @@ DATABASES = {
         'NAME': 'webterminal',
         'USER': 'admin',
         'PASSWORD': 'vmware',
-        'HOST': 'mariadb',
+        'HOST': '172.17.0.2',
         'PORT': '3306',
         'OPTIONS': {
             'autocommit': True,
